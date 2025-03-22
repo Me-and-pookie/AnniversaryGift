@@ -1,0 +1,120 @@
+body {
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #ffdde1);
+    background-size: 200% 200%;
+    animation: loveGradient 10s infinite ease-in-out;
+}
+
+@keyframes loveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.message {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #ff4081;
+    margin-top: 25px;
+}
+
+/* Grid setup */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 120px;
+    padding: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin: auto;
+    perspective: 1000px;  /* Enables 3D effect */
+}
+
+/* Card container */
+.note {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+/* Front & back styling */
+.note .front,
+.note .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Front */
+.note .front {
+    background: #fce38a;
+    color: #6c5b7b;
+}
+
+/* Back */
+.note .back {
+    background: #f38181;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Flip effect */
+.note.flipped {
+    transform: rotateY(180deg);
+}
+
+.final-message {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #ff9a9e;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 20%;
+    margin-left:40%;
+    padding: 40px;
+    font-size: 20px;
+    color: #6c5b7b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.button-decor {
+    background-color: #fce38a; /* Soft, warm yellow from your theme */
+    color: #6c5b7b; /* Subtle, warm grayish-purple that matches your message text color */
+    border: 2px solid #6c5b7b; /* Matching the text color for a cohesive design */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 20px; /* Soft rounded corners */
+    text-transform: uppercase; /* Uppercase text for style */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+.button-decor:hover {
+    background-color: #6c5b7b; /* Darker, complementary shade for hover */
+    color: #fff; /* White text for a clean hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
